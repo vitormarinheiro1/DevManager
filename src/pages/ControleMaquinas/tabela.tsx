@@ -1,4 +1,21 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { Edit, X } from 'lucide-react';
+
+
+const handleEditClick = (id: number) => {
+  console.log(`Edit item with id: ${id}`);
+};
+
+const handleDeleteClick = (id: number) => {
+  console.log(`Delete item with id: ${id}`);
+};
+
+const renderEdit = (params: GridRenderCellParams) => (
+  <button onClick={() => handleEditClick(params.row.id)}><Edit size={20} color='#0059ff' /></button>
+);
+const renderDelete = (params: GridRenderCellParams) => (
+  <button onClick={() => handleDeleteClick(params.row.id)}><X size={20} color='#ff0000' /></button>
+);
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -6,6 +23,18 @@ const columns: GridColDef[] = [
   { field: 'colaborador', headerName: 'Colaborador', width: 130 },
   { field: 'hostname', headerName: 'Hostname', width: 110 },
   { field: 'ip', headerName: 'IP', width: 120 },
+  {
+    field: 'edit',
+    headerName: 'Editar',
+    width: 60,
+    renderCell: renderEdit
+  },
+  {
+    field: 'delete',
+    headerName: 'Deletar',
+    width: 0,
+    renderCell: renderDelete
+  },
 ];
 
 const rows = [
@@ -29,20 +58,21 @@ const rows = [
   { id: 18, colaborador: 'Roxie', usuario: 'Targaryen', hostname: 'MAQUIN018', ip: '192.168.0.18' },
   { id: 19, colaborador: 'Cersei', usuario: 'Daenerys', hostname: 'MAQUIN019', ip: '192.168.0.19' },
   { id: 20, colaborador: 'suporte', usuario: 'Daenerys', hostname: 'MAQUIN020', ip: '192.168.0.20' },
+
 ];
 
 export function Tabela() {
   return (
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
+    <DataGrid
+      rows={rows}
+      columns={columns}
+      initialState={{
+        pagination: {
+          paginationModel: { page: 0, pageSize: 10 },
+        },
+      }}
+      pageSizeOptions={[5, 10]}
+      checkboxSelection
+    />
   );
 }

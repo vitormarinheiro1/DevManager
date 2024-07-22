@@ -1,6 +1,7 @@
 import { Bell, CircleUser, Moon } from "lucide-react";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { Tabela } from "./tabela";
 
 export function Ramais() {
     return (
@@ -18,7 +19,7 @@ export function Ramais() {
                     </div>
                 </div>
                 <div>
-                    <p>Página Inventário em desenvolvimento...</p>
+                    <Tabela />
                 </div>
             </main>
         </div>

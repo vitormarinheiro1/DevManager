@@ -1,9 +1,37 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { Edit, X } from 'lucide-react';
+
+const handleEditClick = (id: number) => {
+  console.log(`Edit item with id: ${id}`);
+};
+
+const handleDeleteClick = (id: number) => {
+  console.log(`Delete item with id: ${id}`);
+};
+
+const renderEdit = (params: GridRenderCellParams) => (
+  <button onClick={() => handleEditClick(params.row.id)}><Edit size={20} color='#0059ff' /></button>
+);
+const renderDelete = (params: GridRenderCellParams) => (
+  <button onClick={() => handleDeleteClick(params.row.id)}><X size={20} color='#ff0000' /></button>
+);
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'produto', headerName: 'Produto', width: 250 },
   { field: 'quantidade', headerName: 'Quantidade', width: 90 },
+  {
+    field: 'edit',
+    headerName: 'Editar',
+    width: 60,
+    renderCell: renderEdit
+},
+{
+    field: 'delete',
+    headerName: 'Deletar',
+    width: 0,
+    renderCell: renderDelete
+},
 ];
 
 const rows = [
