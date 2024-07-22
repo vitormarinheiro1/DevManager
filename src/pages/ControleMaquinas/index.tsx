@@ -7,7 +7,7 @@ export function ControleMaquinas() {
     return (
         <div className="flex h-screen">
             <Sidebar />
-            <main className="flex-grow text-gray-950 bg-gray-100">
+            <main className="flex-grow text-gray-950 bg-gray-100 ov">
                 <div className='flex justify-between text-center py-6 bg-white'>
                     <Header titulo="Controle Máquinas" />
                     <div className='flex items-center px-12 gap-4 text-zinc-400'>

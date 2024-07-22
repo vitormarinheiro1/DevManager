@@ -1,5 +1,5 @@
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { Edit, X } from 'lucide-react';
+import { Edit, FileText, Plus, Sheet, X } from 'lucide-react';
 
 const handleEditClick = (id: number) => {
   console.log(`Edit item with id: ${id}`);
@@ -9,11 +9,26 @@ const handleDeleteClick = (id: number) => {
   console.log(`Delete item with id: ${id}`);
 };
 
+const handlePDFExport = (id: number) => {
+  console.log(`Export PDF item with id: ${id}`);
+};
+
+const handleExcelExport = (id: number) => {
+  console.log(`Export Excel item with id: ${id}`);
+};
+
 const renderEdit = (params: GridRenderCellParams) => (
   <button onClick={() => handleEditClick(params.row.id)}><Edit size={20} color='#0059ff' /></button>
 );
 const renderDelete = (params: GridRenderCellParams) => (
   <button onClick={() => handleDeleteClick(params.row.id)}><X size={20} color='#ff0000' /></button>
+);
+
+const renderExcelEPDF = (params: GridRenderCellParams) => (
+  <>
+    <button onClick={() => handlePDFExport(params.row.id)}><FileText size={20} color='#ff0000' /></button>
+    <button onClick={() => handleExcelExport(params.row.id)}><Sheet size={20} color='#007c02' /></button>
+  </>
 );
 
 const columns: GridColDef[] = [
@@ -25,13 +40,19 @@ const columns: GridColDef[] = [
     headerName: 'Editar',
     width: 60,
     renderCell: renderEdit
-},
-{
+  },
+  {
     field: 'delete',
     headerName: 'Deletar',
     width: 0,
     renderCell: renderDelete
-},
+  },
+  {
+    field: 'exportar',
+    headerName: 'Exportar',
+    width: 0,
+    renderCell: renderExcelEPDF
+  },
 ];
 
 const rows = [
@@ -59,16 +80,24 @@ const rows = [
 
 export function Tabela() {
   return (
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
+    <div className='py-6'>
+      <div className='flex gap-8 px-10'>
+        <input className='outline-none w-[900px] pl-6 flex-2 py-2 bg-zinc-100 border-2 border-gray-300 rounded-full' type="text" placeholder='Search' />
+        <button className='flex items-center gap-2 px-12 font-medium bg-zinc-100 border-2 border-gray-300 rounded-full whitespace-nowrap hover:bg-zinc-200 text-sm'><Plus size={24} />Adicionar item</button>
+      </div>
+      <div className='pt-6 px-12'>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 10 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      </div>
+    </div>
   );
 }

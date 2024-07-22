@@ -1,5 +1,5 @@
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { Edit, X } from 'lucide-react';
+import { Edit, Plus, X } from 'lucide-react';
 
 
 const handleEditClick = (id: number) => {
@@ -63,16 +63,24 @@ const rows = [
 
 export function Tabela() {
   return (
-    <DataGrid
-      rows={rows}
-      columns={columns}
-      initialState={{
-        pagination: {
-          paginationModel: { page: 0, pageSize: 10 },
-        },
-      }}
-      pageSizeOptions={[5, 10]}
-      checkboxSelection
-    />
+    <div className='py-6'>
+      <div className='flex gap-8 px-10'>
+        <input className='outline-none w-[900px] pl-6 flex-2 py-2 bg-zinc-100 border-2 border-gray-300 rounded-full' type="text" placeholder='Search' />
+        <button className='flex items-center gap-2 px-12 font-medium bg-zinc-100 border-2 border-gray-300 rounded-full whitespace-nowrap hover:bg-zinc-200 text-sm'><Plus size={24} />Adicionar item</button>
+      </div>
+      <div className='pt-6 px-12'>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 10 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      </div>
+    </div>
   );
 }
