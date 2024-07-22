@@ -12,7 +12,7 @@ export function Sidebar() {
                 Company
             </p>
             <ul className='pt-12 text-sm'>
-                        <Link to="/dashboard"><li className='flex items-center flex-row gap-4 mb-6 py-2'><LayoutDashboard size={20} />Dashboard</li></Link>
+                        <Link to="/"><li className='flex items-center flex-row gap-4 mb-6 py-2'><LayoutDashboard size={20} />Dashboard</li></Link>
                         <Link to="/ramais"><li className='flex items-center flex-row gap-4 mb-6 py-2'><Phone size={20} />Ramais</li></Link>
                         <Link to="/inventario"><li className='flex items-center flex-row gap-4 mb-6 py-2'><FileCheck size={20} />Inventário TI</li></Link>
                         <Link to="/controle-maquinas"><li className='flex items-center flex-row gap-4 mb-6 py-2'><Monitor size={20} />Controle Máquinas</li></Link>
