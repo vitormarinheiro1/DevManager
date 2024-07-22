@@ -13,7 +13,7 @@ import { ControleMaquinas } from './pages/ControleMaquinas/index.tsx';
 
 const router = createBrowserRouter([
   {
-    path: "/dashboard",
+    path: "/",
     element: <Dashboard />,
   },
   {
