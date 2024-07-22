@@ -29,7 +29,7 @@ const rows = [
   { id: 20, quantidade: 70, produto: 'Bateria CMOS' },
 ];
 
-export function TabelaInventario() {
+export function Tabela() {
   return (
       <DataGrid
         rows={rows}

@@ -1,7 +1,7 @@
 import { Bell, CircleUser, Moon } from "lucide-react";
 import { Sidebar } from "../../components/Sidebar";
-import { TabelaMaquinas } from "../../components/TabelaMaquinas";
 import { Header } from "../../components/Header";
+import { Tabela } from "./tabela";
 
 export function ControleMaquinas() {
     return (
@@ -19,7 +19,7 @@ export function ControleMaquinas() {
                     </div>
                 </div>
                 <div>
-                    <TabelaMaquinas />
+                    <Tabela />
                 </div>
             </main>
         </div>

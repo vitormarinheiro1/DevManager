@@ -31,7 +31,7 @@ const rows = [
   { id: 20, colaborador: 'suporte', usuario: 'Daenerys', hostname: 'MAQUIN020', ip: '192.168.0.20' },
 ];
 
-export function TabelaMaquinas() {
+export function Tabela() {
   return (
       <DataGrid
         rows={rows}
