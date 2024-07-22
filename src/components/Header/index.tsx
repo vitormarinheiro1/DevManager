@@ -1,18 +1,20 @@
-import { HeartPulse, Moon } from "lucide-react";
+import { CircleUser, FileCheck, LayoutDashboard, Monitor, Phone } from 'lucide-react';
 
 export function Header() {
     return (
-        <header className="flex justify-around items-center h-16">
-            <h1 className="flex items-center justify-center text-3xl text-primary gap-1">Hebrom <span className="mt-1"><HeartPulse color="#ff0000" size={32}/></span></h1>
-            <nav>
-                <ul className="flex gap-2 text-lg text-primary">
-                    <li>Ramais</li>
-                    <li>Estoque</li>
-                    <li>Máquinas</li>
-                    <li>Chamados</li>
-                    <li><Moon /></li>
+        <div className="flex h-screen">
+            <aside className="bg-zinc-900 h-full w-56 text-zinc-50 py-12 px-6">
+                <p className='flex items-center gap-2'><CircleUser size={32} />Vitor Marinheiro</p>
+                <ul className='py-20'>
+                    <li className='flex flex-row gap-4 mb-6'><LayoutDashboard />Dashboard</li>
+                    <li className='flex flex-row gap-4 mb-6'><Phone />Ramais</li>
+                    <li className='flex items-center flex-row gap-4 mb-6'><FileCheck />Inventário TI</li>
+                    <li className='flex items-center flex-row gap-4 mb-6'><Monitor />Controle Máquinas</li>
                 </ul>
-            </nav>
-        </header>
+            </aside>
+            <main className="flex-grow text-gray-950">
+                Conteúdo principal
+            </main>
+        </div>
     )
 }
