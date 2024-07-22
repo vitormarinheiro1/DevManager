@@ -1,6 +1,7 @@
 import { Bell, CircleUser, Moon } from "lucide-react";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { TabelaInventario } from "../../components/TabelaInventario";
 
 export function Inventario() {
     return (
@@ -18,7 +19,7 @@ export function Inventario() {
                     </div>
                 </div>
                 <div>
-                    <p>Página Inventário em desenvolvimento...</p>
+                    <TabelaInventario />
                 </div>
             </main>
         </div>
