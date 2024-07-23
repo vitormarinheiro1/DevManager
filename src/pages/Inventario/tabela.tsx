@@ -44,7 +44,7 @@ const columns: GridColDef[] = [
   {
     field: 'delete',
     headerName: 'Deletar',
-    width: 0,
+    width: 60,
     renderCell: renderDelete
   },
   {

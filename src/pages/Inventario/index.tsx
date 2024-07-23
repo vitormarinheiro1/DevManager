@@ -1,6 +1,6 @@
 import { Bell, CircleUser, Moon } from "lucide-react";
-import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { Header } from "../../components/Header";
 import { Tabela } from "./tabela";
 
 export function Inventario() {
@@ -13,7 +13,7 @@ export function Inventario() {
                     <div className='flex items-center px-12 gap-4 text-zinc-400'>
                         <Moon size={20} />
                         <Bell size={20} />
-                        <div className='bg-zinc-400 w-px' />
+                        <div className='bg-zinc-400 h-10 w-px' />
                         <p>Vitor Marinheiro</p>
                         <CircleUser size={36} />
                     </div>

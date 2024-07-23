@@ -23,7 +23,7 @@ const columns: GridColDef[] = [
     { field: 'colaborador', headerName: 'Colaborador', width: 130 },
     { field: 'email', headerName: 'E-mail', width: 180 },
     { field: 'ramal', headerName: 'Ramal', width: 110 },
-    { field: 'descricao', headerName: 'Descrição', width: 250 },
+    { field: 'descricao', headerName: 'Descrição', width: 150 },
     {
         field: 'edit',
         headerName: 'Editar',
@@ -33,7 +33,7 @@ const columns: GridColDef[] = [
     {
         field: 'delete',
         headerName: 'Deletar',
-        width: 0,
+        width: 60,
         renderCell: renderDelete
     },
 ];
